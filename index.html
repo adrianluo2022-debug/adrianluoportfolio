@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Adrian Luo design portfolio featuring architecture, residential remodeling, daycare, interior floorplans, and rendering work."
+    />
+    <title>Adrian Luo | Design Portfolio</title>
+    <link rel="canonical" href="https://adrianluo2022-debug.github.io/adrianluodesign/" />
+    <meta property="og:url" content="https://adrianluo2022-debug.github.io/adrianluodesign/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/adrian-luo-favicon.png" />
+    <link rel="apple-touch-icon" href="assets/brand/adrian-luo-favicon.png" />
+    <script>
+      (() => {
+        const requestedSite = new URLSearchParams(window.location.search).get("site");
+        const isPortfolioDomain = /(^|\.)adrianluoportfolio\.com$/i.test(window.location.hostname);
+        const isPortfolioProject = /\/adrianluoportfolio(?:\/|$)/i.test(window.location.pathname);
+        const siteVariant = ["design", "portfolio"].includes(requestedSite)
+          ? requestedSite
+          : isPortfolioDomain || isPortfolioProject
+            ? "portfolio"
+            : "design";
+        document.documentElement.dataset.site = siteVariant;
+
+        if (siteVariant === "portfolio") {
+          document.querySelector('link[rel="canonical"]').href = "https://adrianluo2022-debug.github.io/adrianluoportfolio/";
+          document.querySelector('meta[property="og:url"]').content = "https://adrianluo2022-debug.github.io/adrianluoportfolio/";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=20260812-5" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="cursor-orb" id="cursorOrb" aria-hidden="true"></div>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Adrian Luo portfolio home">
+        <span class="brand-wordmark" aria-hidden="true">
+          <span>Adrian</span>
+          <span>Luo</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#focus" data-i18n="nav.focus">Focus</a>
+        <a href="#profile" data-i18n="nav.profile">About Me</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <button class="language-toggle" type="button" id="languageToggle" aria-label="Switch language">
+        涓枃
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Portfolio home">
+        <div class="hero-backdrop" aria-hidden="true">
+          <span class="hero-backdrop-slide hero-backdrop-slide-original"></span>
+          <span class="hero-backdrop-slide hero-backdrop-slide-one"></span>
+          <span class="hero-backdrop-slide hero-backdrop-slide-two"></span>
+          <span class="hero-backdrop-slide hero-backdrop-slide-three"></span>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-title-block site-portfolio-only" data-reveal>
+          <p class="hero-year">2026</p>
+          <h1 class="hero-wordmark" aria-label="Portfolio">
+            <span class="hero-wordmark-fragment hero-wordmark-p" aria-hidden="true">P</span>
+            <span class="hero-wordmark-fragment hero-wordmark-f" aria-hidden="true">F</span>
+            <span class="hero-hand-o" aria-hidden="true">
+              <svg viewBox="0 0 120 220" role="presentation">
+                <defs>
+                  <clipPath id="heroOvalClip">
+                    <path d="M63 8C95 9 108 49 106 108C105 168 91 210 58 212C27 210 13 169 15 110C16 51 30 9 63 8Z" />
+                  </clipPath>
+                </defs>
+                <path class="hero-o-outline" pathLength="1" d="M63 8C95 9 108 49 106 108C105 168 91 210 58 212C27 210 13 169 15 110C16 51 30 9 63 8Z" />
+                <path class="hero-o-texture" pathLength="1" d="M59 12C89 8 103 50 102 109C101 166 87 206 58 208C30 207 18 167 19 110C19 53 31 15 59 12Z" />
+                <g class="hero-o-hatching" clip-path="url(#heroOvalClip)">
+                  <path pathLength="1" d="M-18 45L138 -5" />
+                  <path pathLength="1" d="M-18 66L138 16" />
+                  <path pathLength="1" d="M-18 87L138 37" />
+                  <path pathLength="1" d="M-18 108L138 58" />
+                  <path pathLength="1" d="M-18 129L138 79" />
+                  <path pathLength="1" d="M-18 150L138 100" />
+                  <path pathLength="1" d="M-18 171L138 121" />
+                  <path pathLength="1" d="M-18 192L138 142" />
+                  <path pathLength="1" d="M-18 213L138 163" />
+                  <path pathLength="1" d="M-18 234L138 184" />
+                </g>
+              </svg>
+            </span>
+            <span class="hero-wordmark-fragment hero-wordmark-rt" aria-hidden="true">RT</span>
+            <span class="hero-wordmark-fragment hero-wordmark-li" aria-hidden="true">LIO</span>
+          </h1>
+          <p class="hero-motto" data-i18n="hero.motto">Design never ends.</p>
+        </div>
+        <div class="hero-meta" aria-label="Portfolio highlights" data-reveal>
+          <button class="hero-chip" type="button" data-highlight-category="architecture" data-highlight-subcategory="house-remodel">
+            <span data-i18n="hero.metaOne">Residential Remodel</span>
+          </button>
+          <button class="hero-chip" type="button" data-highlight-category="interior" data-highlight-subcategory="floorplan">
+            <span data-i18n="hero.metaTwo">Interior Planning</span>
+          </button>
+          <button class="hero-chip" type="button" data-highlight-category="interior" data-highlight-subcategory="rendering">
+            <span data-i18n="hero.metaThree">Rendering</span>
+          </button>
+          <button class="hero-chip" type="button" data-highlight-section="procurement">
+            <span data-i18n="hero.metaFour">Furniture Sourcing & Ocean Freight</span>
+          </button>
+        </div>
+        <a class="scroll-prompt" href="#profile" aria-label="Scroll to profile">
+          <span data-i18n="hero.scroll">Scroll</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section class="section section-intro" id="profile" aria-label="Profile and experience">
+        <div class="profile-layout">
+          <div class="profile-copy" data-reveal>
+            <p class="eyebrow" data-i18n="profile.eyebrow">About Me</p>
+            <p class="profile-lede" data-i18n="profile.lede">
+              With more than four years in the design industry, I focus on interior spatial design, creative design, and architectural visualization for private residences, apartments, and real-estate marketing.
+            </p>
+          </div>
+          <figure class="profile-media" data-reveal>
+            <img
+              src="assets/profile/adrian-luo.jpg"
+              alt="Portrait of Adrian Luo"
+            />
+          </figure>
+
+          <div class="experience-panel site-portfolio-only" data-reveal>
+            <div class="experience-heading">
+              <p class="eyebrow" data-i18n="experience.eyebrow">About Me</p>
+            </div>
+            <div class="experience-list">
+              <article class="experience-item">
+                <time datetime="2024" data-i18n="experience.periodOne">2024 - 2026</time>
+                <div>
+                  <h4 data-i18n="experience.roleOne">Guangzhou Huihe Consulting Management Co., Ltd. / Acre NYC 鈥?Interior Designer</h4>
+                  <p data-i18n="experience.copyOne">
+                    Produced marketing-grade renderings for premium residential developments before construction, refined floorplans for sales presentation, and coordinated furniture selection, manufacturing, packing, and ocean-freight handoffs from Shenzhen to New York.
+                  </p>
+                </div>
+              </article>
+              <article class="experience-item">
+                <time datetime="2022" data-i18n="experience.periodTwo">2022 - 2024</time>
+                <div>
+                  <h4 data-i18n="experience.roleTwo">Shenzhen Jingchen Technology Co., Ltd., Hunan Branch 鈥?Architectural Designer</h4>
+                  <p data-i18n="experience.copyTwo">
+                    Prepared architectural design drawings for house, kitchen and bathroom remodels, additions, ADUs, multi-unit apartments, commercial spaces, and daycare projects, developing clear and coordinated documentation across varied building types.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="focus-section" id="focus" aria-label="Portfolio focus">
+        <div class="focus-shell">
+          <div class="focus-heading" data-reveal>
+            <p class="eyebrow" data-i18n="focus.eyebrow">Portfolio Focus</p>
+          </div>
+
+          <div class="focus-blocks" aria-label="Portfolio category shortcuts">
+            <button class="focus-block focus-architecture" type="button" data-focus-category="architecture" data-reveal>
+              <span class="focus-number">01</span>
+              <span class="focus-title" data-i18n="focus.archTitle">Architecture</span>
+              <svg class="focus-sketch" viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M22 88 L22 54 L80 18 L138 54 L138 88" />
+                <path d="M45 88 L45 60 L76 60 L76 88" />
+                <path d="M94 88 L94 64 L122 64 L122 88" />
+                <path d="M34 52 C58 40 92 40 126 52" />
+              </svg>
+            </button>
+
+            <button class="focus-block focus-interior" type="button" data-focus-category="interior" data-reveal>
+              <span class="focus-number">02</span>
+              <span class="focus-title" data-i18n="focus.intTitle">Interior</span>
+              <svg class="focus-sketch" viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M24 24 H136 V96 H24 Z" />
+                <path d="M74 24 V96" />
+                <path d="M74 58 H136" />
+                <path d="M42 46 C50 36 62 36 68 46" />
+                <path d="M94 78 C108 66 124 68 130 82" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="procurement-section" id="procurement" aria-label="Furniture sourcing and ocean freight">
+        <div class="procurement-inner">
+          <div class="procurement-heading" data-reveal>
+            <p class="eyebrow" data-i18n="procurement.eyebrow">Sourcing</p>
+          </div>
+          <div class="procurement-copy" data-reveal>
+            <h2 class="shipping-title" data-i18n="procurement.shippingTitle">Ocean freight</h2>
+            <div class="shipping-route" aria-label="Shipping route">
+              <span data-i18n="procurement.routeFrom">娣卞湷</span>
+              <i aria-hidden="true"></i>
+              <span data-i18n="procurement.routeTo">绾界害</span>
+            </div>
+          </div>
+        </div>
+        <figure class="procurement-media" data-reveal>
+          <img src="assets/procurement/ocean-freight-tracking.png" alt="" loading="lazy" />
+        </figure>
+      </section>
+
+      <section class="section work-section" id="work" aria-label="Selected work">
+        <div class="section-heading work-heading" data-reveal>
+          <div>
+            <p class="eyebrow" data-i18n="work.eyebrow">Selected Work</p>
+          </div>
+          <p class="section-note" id="projectCount" aria-live="polite"></p>
+        </div>
+
+        <div class="filters" aria-label="Project filters" data-reveal>
+          <div class="filter-row" id="categoryFilters" aria-label="Primary categories"></div>
+        </div>
+
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-label="Design scope and visualization tools">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow" data-i18n="skills.eyebrow">Design Scope</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-block" data-reveal>
+            <h3 data-i18n="skills.blockOneTitle">Design Scope</h3>
+            <ul id="designScopeList"></ul>
+          </article>
+          <article class="capability-block" data-reveal>
+            <h3 data-i18n="skills.blockThreeTitle">Visualization Tools</h3>
+            <ul id="softwareList"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contactTitle">
+        <p class="contact-kicker eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <div class="contact-inner" data-reveal>
+          <div class="contact-copy">
+            <h2 id="contactTitle" data-i18n="contact.title">Portfolio materials can be replaced as project images are ready.</h2>
+            <p data-i18n="contact.copy">
+              I am always glad to connect and hear from you.
+            </p>
+          </div>
+          <address class="contact-details" aria-label="Contact details">
+            <span class="contact-method">
+              <span class="contact-label">Email / 閭</span>
+              <a class="email-link" href="mailto:adrianluo2022@gmail.com">adrianluo2022@gmail.com</a>
+            </span>
+            <span class="contact-method">
+              <span class="contact-label">Phone / 鐢佃瘽锛堝井淇″悓鍙凤級</span>
+              <span class="phone-link">+86 17674043664</span>
+            </span>
+          </address>
+        </div>
+        <p class="site-copyright">
+          <span data-i18n="contact.copyrightPrefix">漏 2026</span>
+          <span class="copyright-name">Adrian Luo</span>
+          <span data-i18n="contact.copyrightSuffix">All rights reserved.</span>
+        </p>
+      </section>
+    </main>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close project detail">脳</button>
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="" />
+          <div class="modal-gallery" id="modalGallery"></div>
+        </div>
+        <div class="modal-content">
+          <p class="modal-kicker" id="modalKicker"></p>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-description" id="modalDescription"></p>
+          <div class="modal-meta-list" id="modalMeta"></div>
+          <div class="tag-list" id="modalTags"></div>
+        </div>
+      </article>
+    </div>
+
+    <script src="script.js?v=20260812-4"></script>
+  </body>
+</html>
