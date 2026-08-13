@@ -741,7 +741,7 @@ h3 {
 
 .profile-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(320px, 0.62fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 0.62fr);
   gap: 54px 64px;
   align-items: center;
   max-width: 1180px;
@@ -1924,10 +1924,14 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
   }
 
   .section-heading,
-  .profile-layout,
   .capability-grid {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+
+  .profile-layout {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 0.62fr);
+    gap: clamp(14px, 4vw, 42px);
   }
 
   .intro-grid {
@@ -1999,16 +2003,18 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
   }
 
   html[data-site="design"] .profile-layout {
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     height: 100%;
     min-height: 0;
-    align-items: stretch;
+    align-items: center;
   }
 
-  html[data-site="design"] .profile-media,
-  html[data-site="design"] .profile-media img {
-    height: 100%;
+  .profile-media,
+  .profile-media img {
+    width: 100%;
+    height: auto;
     min-height: 0;
+    aspect-ratio: 1200 / 1603;
   }
 
   .procurement-section {
@@ -2110,13 +2116,15 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
   html[data-site="design"] .profile-layout {
     height: 100%;
     min-height: 0;
-    align-items: stretch;
+    align-items: center;
   }
 
-  html[data-site="design"] .profile-media,
-  html[data-site="design"] .profile-media img {
-    height: 100%;
+  .profile-media,
+  .profile-media img {
+    width: 100%;
+    height: auto;
     min-height: 0;
+    aspect-ratio: 1200 / 1603;
   }
 }
 
@@ -2264,20 +2272,26 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
 
   html[data-site="design"] .section-intro {
     --profile-pad-y: 24px;
-    padding-top: 118px;
+    padding-top: 104px;
+  }
+
+  html[data-site="design"] .profile-lede {
+    margin-top: 10px;
+    font-size: clamp(0.72rem, 2.8vw, 0.88rem);
+    line-height: 1.34;
   }
 
   .focus-blocks {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
   }
 
   .focus-block {
-    padding: 20px 22px;
+    padding: 18px 12px;
   }
 
   .focus-title {
-    font-size: clamp(1.55rem, 8vw, 2rem);
+    font-size: clamp(1.2rem, 5.8vw, 1.75rem);
   }
 
   .experience-item {
@@ -2285,7 +2299,7 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
   }
 
   .focus-sketch {
-    width: 168px;
+    width: clamp(90px, 30vw, 150px);
   }
 
   .project-grid {
