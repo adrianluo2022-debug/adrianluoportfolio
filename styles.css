@@ -373,6 +373,26 @@ textarea {
   line-height: 1;
 }
 
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.modal-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .hero-wordmark {
   display: grid;
   grid-template-areas:
@@ -1932,25 +1952,63 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
 
   .focus-shell {
     grid-template-columns: 1fr;
-    min-height: auto;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .focus-heading {
     position: relative;
     top: auto;
     min-height: auto;
-    padding: 72px 22px 34px;
+    padding: 28px 22px 18px;
+  }
+
+  .focus-heading .eyebrow,
+  html[lang="zh-CN"] .focus-heading .eyebrow {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
   }
 
   .focus-blocks {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
   }
 
   .focus-block {
-    min-height: 420px;
+    height: 100%;
+    min-height: 0;
     padding: 34px 22px;
     border-top: 1px solid rgba(255, 250, 242, 0.16);
-    border-left: 0;
+  }
+
+  .focus-shell [data-reveal] {
+    transform: none;
+  }
+
+  html[data-site="design"] .section-intro {
+    --profile-pad-y: clamp(24px, 4svh, 40px);
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    padding-top: var(--profile-pad-y);
+    padding-bottom: var(--profile-pad-y);
+  }
+
+  html[data-site="design"] .profile-layout {
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100%;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  html[data-site="design"] .profile-media,
+  html[data-site="design"] .profile-media img {
+    height: 100%;
+    min-height: 0;
   }
 
   .procurement-section {
@@ -1998,6 +2056,67 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
 
   .modal-content {
     padding: 52px 28px 30px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 941px), (min-width: 941px) and (max-width: 1024px) {
+  .focus-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .focus-heading {
+    position: relative;
+    top: auto;
+    min-height: auto;
+    padding: 28px 40px 18px;
+  }
+
+  .focus-heading .eyebrow,
+  html[lang="zh-CN"] .focus-heading .eyebrow {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
+  }
+
+  .focus-blocks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+  }
+
+  .focus-block {
+    height: 100%;
+    min-height: 0;
+    padding: 34px;
+  }
+
+  .focus-shell [data-reveal] {
+    transform: none;
+  }
+
+  html[data-site="design"] .section-intro {
+    --profile-pad-y: clamp(40px, 6svh, 72px);
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    padding-top: var(--profile-pad-y);
+    padding-bottom: var(--profile-pad-y);
+  }
+
+  html[data-site="design"] .profile-layout {
+    height: 100%;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  html[data-site="design"] .profile-media,
+  html[data-site="design"] .profile-media img {
+    height: 100%;
+    min-height: 0;
   }
 }
 
@@ -2136,6 +2255,29 @@ html[lang="zh-CN"] .focus-heading .eyebrow {
   .profile-media,
   .profile-media img {
     min-height: 420px;
+  }
+
+  html[data-site="design"] .profile-media,
+  html[data-site="design"] .profile-media img {
+    min-height: 0;
+  }
+
+  html[data-site="design"] .section-intro {
+    --profile-pad-y: 24px;
+    padding-top: 118px;
+  }
+
+  .focus-blocks {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .focus-block {
+    padding: 20px 22px;
+  }
+
+  .focus-title {
+    font-size: clamp(1.55rem, 8vw, 2rem);
   }
 
   .experience-item {
